@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-label="DevRedious — développeur et orchestrateur agentique">
+  <defs>
+    <radialGradient id="vig" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#C2A878" stop-opacity="0.10"/>
+      <stop offset="45%" stop-color="#C2A878" stop-opacity="0.02"/>
+      <stop offset="100%" stop-color="#0A0A0B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="hair" x1="0%" y1="0" x2="100%" y2="0">
+      <stop offset="0%" stop-color="#C2A878" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#C2A878" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#C2A878" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0%" y1="0" x2="100%" y2="0">
+      <stop offset="0%" stop-color="#C2A878" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#C2A878" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clipSpec"><rect x="24" y="298" width="1152" height="4"/></clipPath>
+  </defs>
+
+  <rect width="1200" height="340" fill="#0A0A0B"/>
+  <rect width="1200" height="340" fill="url(#vig)" opacity="0.75">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.5;1" dur="8s" begin="1.2s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </rect>
+  <rect x="24.5" y="24.5" width="1151" height="291" rx="10" fill="none" stroke="#FFFFFF" stroke-opacity="0.07"/>
+  <text x="56" y="72" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" letter-spacing="0.22em" fill="#6E6E73">PROFILE — 2026</text>
+  <circle cx="1136" cy="72" r="3.2" fill="#C2A878">
+    <animate attributeName="opacity" values="0.45;1;0.45" keyTimes="0;0.5;1" dur="4.5s" begin="1.4s" repeatCount="indefinite" calcMode="spline" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
+  </circle>
+  <text x="56" y="178" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="72" font-weight="600" letter-spacing="-0.035em" fill="#F4F3F0">DevRedious</text>
+  <rect x="58" y="200" width="56" height="3" rx="1.5" fill="#C2A878"/>
+  <text x="58" y="240" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="19" fill="#9A9A9F">développeur &amp; orchestrateur agentique</text>
+  <text x="58" y="290" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12" letter-spacing="0.1em" fill="#6E6E73">solo · local-first · zéro télémétrie</text>
+  <rect x="668" y="56" width="1" height="228" fill="#FFFFFF" fill-opacity="0.07"/>
+  <g>
+    <text x="720" y="96" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" letter-spacing="0.16em" fill="#6E6E73">RÔLE</text>
+    <text x="1144" y="96" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="16" fill="#9A9A9F">dev &amp; orchestrateur agentique</text>
+    <rect x="720" y="112" width="424" height="1" fill="#FFFFFF" fill-opacity="0.06"/>
+  </g>
+  <g>
+    <text x="720" y="140" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" letter-spacing="0.16em" fill="#6E6E73">STACK</text>
+    <text x="1144" y="140" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="16" fill="#9A9A9F">Tauri · Rust · React</text>
+    <rect x="720" y="156" width="424" height="1" fill="#FFFFFF" fill-opacity="0.06"/>
+  </g>
+  <g>
+    <text x="720" y="184" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" letter-spacing="0.16em" fill="#6E6E73">INFRA</text>
+    <text x="1144" y="184" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="16" fill="#9A9A9F">self-hosted · *.redious.fr</text>
+    <rect x="720" y="200" width="424" height="1" fill="#FFFFFF" fill-opacity="0.06"/>
+  </g>
+  <g>
+    <text x="720" y="228" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" letter-spacing="0.16em" fill="#6E6E73">AGENTS</text>
+    <text x="1144" y="228" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="16" fill="#9A9A9F">Claude Code · Cursor · MCP</text>
+    <rect x="720" y="244" width="424" height="1" fill="#FFFFFF" fill-opacity="0.06"/>
+  </g>
+  <g>
+    <text x="720" y="272" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="11.5" letter-spacing="0.16em" fill="#6E6E73">MODE</text>
+    <text x="1144" y="272" text-anchor="end" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="16" fill="#9A9A9F">solo, de l'archi à la prod</text>
+    <rect x="720" y="288" width="424" height="1" fill="#FFFFFF" fill-opacity="0.06"/>
+  </g>
+  <g clip-path="url(#clipSpec)">
+    <rect x="-260" y="299" width="260" height="2" fill="url(#shine)" opacity="0">
+      <animate attributeName="x" values="-260;1412" keyTimes="0;1" dur="7s" begin="1.6s" repeatCount="indefinite" calcMode="ease-in-out"/>
+      <animate attributeName="opacity" values="0;0.9;0.9;0" keyTimes="0;0.12;0.88;1" dur="7s" begin="1.6s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

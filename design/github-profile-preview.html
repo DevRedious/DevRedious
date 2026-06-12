@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevRedious — profil GitHub</title>
+<style>
+  :root {
+    --accent: #C2A878;
+    /* GitHub dark */
+    --gh-canvas: #0d1117;
+    --gh-box: #0d1117;
+    --gh-border: #30363d;
+    --gh-border-muted: #21262d;
+    --gh-header: #161b22;
+    --gh-text: #e6edf3;
+    --gh-muted: #9198a1;
+    --gh-link: #4493f8;
+    --gh-h-border: #21262d;
+    --gh-code-bg: rgba(101,108,118,0.2);
+    --gh-table-alt: #151b23;
+  }
+  [data-theme="light"] {
+    --gh-canvas: #ffffff;
+    --gh-box: #ffffff;
+    --gh-border: #d1d9e0;
+    --gh-border-muted: #d1d9e0;
+    --gh-header: #f6f8fa;
+    --gh-text: #1f2328;
+    --gh-muted: #59636e;
+    --gh-link: #0969da;
+    --gh-h-border: #d1d9e0;
+    --gh-code-bg: rgba(101,108,118,0.12);
+    --gh-table-alt: #f6f8fa;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+    color: var(--gh-text);
+    transition: color .3s ease;
+  }
+  /* high-specificity so the host's injected `html,body{background:transparent}` can't win */
+  body[data-theme] {
+    background:
+      radial-gradient(1200px 600px at 50% -10%, color-mix(in oklab, var(--accent) 7%, transparent), transparent 70%),
+      var(--gh-canvas);
+  }
+
+  /* ── faux GitHub top bar ── */
+  .gh-topbar {
+    height: 56px;
+    border-bottom: 1px solid var(--gh-border);
+    background: var(--gh-header);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 24px;
+  }
+  .gh-topbar svg { display: block; }
+  .gh-topbar .mark { color: var(--gh-text); }
+  .gh-search {
+    flex: 1;
+    max-width: 320px;
+    height: 30px;
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    background: color-mix(in oklab, var(--gh-canvas) 60%, transparent);
+    display: flex; align-items: center;
+    padding: 0 10px;
+    font-size: 13px;
+    color: var(--gh-muted);
+  }
+  .gh-topbar .spacer { flex: 1; }
+  .gh-pill {
+    width: 20px; height: 20px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 40%, #000));
+  }
+
+  /* ── profile layout ── */
+  .gh-page {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+    display: grid;
+    grid-template-columns: 296px 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 900px) {
+    .gh-page { grid-template-columns: 1fr; }
+    .gh-sidebar { display: none; }
+  }
+
+  .gh-sidebar { padding-top: 16px; }
+  .avatar {
+    width: 260px; height: 260px; border-radius: 50%;
+    border: 1px solid var(--gh-border);
+    background:
+      radial-gradient(120px 120px at 38% 34%, color-mix(in oklab, var(--accent) 22%, #1a1a1d), transparent 70%),
+      #0f0f11;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar .mono {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 64px; font-weight: 600;
+    color: #f4f3f0;
+    letter-spacing: -0.04em;
+  }
+  .avatar .ring {
+    position: absolute; inset: 18px;
+    border: 1px solid color-mix(in oklab, var(--accent) 30%, transparent);
+    border-radius: 50%;
+  }
+  .gh-name { margin: 16px 2px 0; }
+  .gh-name h1 { font-size: 26px; font-weight: 600; margin: 0; line-height: 1.2; }
+  .gh-name .handle { font-size: 20px; font-weight: 300; color: var(--gh-muted); margin-top: 2px; }
+  .gh-bio { margin: 14px 2px 0; font-size: 14px; color: var(--gh-text); line-height: 1.5; }
+  .gh-follow {
+    margin: 16px 0; width: 100%;
+    height: 30px; border: 1px solid var(--gh-border); border-radius: 6px;
+    background: var(--gh-header); color: var(--gh-text);
+    font-size: 12px; font-weight: 500;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+  }
+  .gh-meta-row { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--gh-muted); margin: 8px 2px; }
+  .gh-meta-row b { color: var(--gh-text); font-weight: 600; }
+
+  /* ── readme card ── */
+  .gh-readme {
+    border: 1px solid var(--gh-border);
+    border-radius: 6px;
+    background: var(--gh-box);
+    overflow: hidden;
+  }
+  .gh-readme-head {
+    height: 42px;
+    border-bottom: 1px solid var(--gh-border);
+    display: flex; align-items: center; gap: 8px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: var(--gh-muted);
+  }
+  .gh-readme-head .crumb { color: var(--gh-link); font-weight: 600; }
+  .gh-readme-body { padding: 44px 56px 48px; }
+  @media (max-width: 700px) { .gh-readme-body { padding: 28px 20px; } }
+
+  /* ── markdown styling (GitHub-faithful) ── */
+  .md { font-size: 16px; line-height: 1.6; color: var(--gh-text); }
+  .md .banner-wrap { margin: 4px 0 8px; }
+  .md .banner-wrap svg { width: 100%; height: auto; display: block; border-radius: 8px; }
+  .md .tagline {
+    text-align: center;
+    color: var(--gh-muted);
+    font-style: italic;
+    font-size: 17px;
+    margin: 22px 0 34px;
+    font-family: "Newsreader", Georgia, serif;
+  }
+  .md h2 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gh-muted);
+    margin: 44px 0 18px;
+    padding: 0;
+    border: 0;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .md h2::after {
+    content: ""; flex: 1; height: 1px;
+    background: var(--gh-h-border);
+  }
+  .md p { margin: 0 0 16px; }
+  .md a { color: var(--gh-link); text-decoration: none; }
+  .md a:hover { text-decoration: underline; }
+  .md strong { font-weight: 600; color: var(--gh-text); }
+  .md code {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 0.86em;
+    background: var(--gh-code-bg);
+    padding: 0.2em 0.42em;
+    border-radius: 6px;
+  }
+  .md ul.feat { list-style: none; padding: 0; margin: 0; display: grid; gap: 2px; }
+  .md ul.feat li {
+    padding: 14px 0 16px;
+    border-top: 1px solid var(--gh-border-muted);
+    display: grid;
+    grid-template-columns: 22px 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+  .md ul.feat li:last-child { border-bottom: 1px solid var(--gh-border-muted); }
+  .md ul.feat .ic { color: var(--accent); margin-top: 2px; }
+  .md ul.feat .ic svg { display: block; }
+  .md ul.feat .t { font-size: 15.5px; }
+  .md ul.feat .t b { font-weight: 600; }
+  .md ul.feat .t span { color: var(--gh-muted); }
+
+  .md .badges { display: flex; flex-wrap: wrap; gap: 7px; justify-content: center; margin: 0 0 6px; }
+  .md .badges img { height: 22px; display: block; }
+
+  /* projects */
+  .md .proj { display: grid; gap: 0; margin: 4px 0 8px; }
+  .md .proj .row {
+    display: grid;
+    grid-template-columns: 168px 1fr auto;
+    gap: 18px;
+    align-items: baseline;
+    padding: 15px 4px;
+    border-top: 1px solid var(--gh-border-muted);
+  }
+  .md .proj .row:last-child { border-bottom: 1px solid var(--gh-border-muted); }
+  .md .proj .name { font-weight: 600; font-size: 15.5px; }
+  .md .proj .desc { color: var(--gh-muted); font-size: 14.5px; }
+  .md .proj .vis {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--gh-muted);
+    border: 1px solid var(--gh-border);
+    border-radius: 999px;
+    padding: 2px 10px;
+    white-space: nowrap;
+  }
+  .md .proj .vis.pub { color: var(--accent); border-color: color-mix(in oklab, var(--accent) 45%, var(--gh-border)); }
+
+  /* stack groups */
+  .md .stack { display: grid; gap: 16px; margin: 2px 0 4px; }
+  .md .stack .grp { display: grid; grid-template-columns: 132px 1fr; gap: 16px; align-items: baseline; }
+  @media (max-width: 560px){ .md .stack .grp { grid-template-columns: 1fr; gap: 4px; } }
+  .md .stack .grp .k {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--gh-muted);
+    padding-top: 2px;
+  }
+  .md .stack .grp .v { font-size: 15px; color: var(--gh-text); }
+  .md .stack .grp .v .dot { color: var(--gh-border); margin: 0 8px; }
+
+  /* infra */
+  .md .infra { display: grid; gap: 10px; margin: 2px 0; }
+  .md .infra .line {
+    display: grid; grid-template-columns: 18px auto 1fr; gap: 12px; align-items: center;
+    font-size: 15px;
+  }
+  .md .infra .line .host { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 13.5px; color: var(--gh-muted); }
+  .md .infra .line .ic { color: var(--accent); }
+
+  .md hr { border: 0; border-top: 1px solid var(--gh-border-muted); margin: 40px 0 24px; }
+  .md .foot { text-align: center; color: var(--gh-muted); font-size: 14px; }
+  .md .foot .lead { font-family: "Newsreader", Georgia, serif; font-style: italic; font-size: 16px; color: var(--gh-text); }
+  .md .foot a { display: inline-block; margin-top: 8px; }
+
+  #tweaks-root { position: fixed; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz@1,6..72&display=swap" rel="stylesheet">
+</head>
+<body data-theme="dark">
+
+  <div class="gh-topbar">
+    <svg class="mark" height="30" viewBox="0 0 16 16" width="30" fill="currentColor"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path></svg>
+    <div class="gh-search">Type <span style="font-family:ui-monospace,monospace;border:1px solid var(--gh-border);border-radius:4px;padding:0 5px;margin:0 5px;font-size:11px;">/</span> to search</div>
+    <div class="spacer"></div>
+    <div class="gh-pill"></div>
+  </div>
+
+  <div class="gh-page">
+    <aside class="gh-sidebar">
+      <div class="avatar"><div class="ring"></div><div class="mono">dR</div></div>
+      <div class="gh-name">
+        <h1>DevRedious</h1>
+        <div class="handle">DevRedious</div>
+      </div>
+      <div class="gh-bio">Développeur &amp; orchestrateur agentique. Apps desktop local-first, self-hosting, serveurs MCP.</div>
+      <button class="gh-follow">Follow</button>
+      <div class="gh-meta-row">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M2 5.5a3.5 3.5 0 1 1 5.898 2.549 5.508 5.508 0 0 1 3.034 4.084.75.75 0 1 1-1.482.235 4 4 0 0 0-7.9 0 .75.75 0 0 1-1.482-.236A5.507 5.507 0 0 1 3.102 8.05 3.493 3.493 0 0 1 2 5.5ZM11 4a3.001 3.001 0 0 1 2.22 5.018 5.01 5.01 0 0 1 2.56 3.012.749.749 0 0 1-.885.954.752.752 0 0 1-.549-.514 3.507 3.507 0 0 0-2.522-2.372.75.75 0 0 1-.574-.73v-.352a.75.75 0 0 1 .416-.672A1.5 1.5 0 0 0 11 5.5.75.75 0 0 1 11 4Z"></path></svg>
+        <b>—</b> <span>solo</span>
+      </div>
+      <div class="gh-meta-row">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="m12.596 11.596-3.535 3.536a1.5 1.5 0 0 1-2.122 0l-3.535-3.536a6.5 6.5 0 1 1 9.192-9.193 6.5 6.5 0 0 1 0 9.193Zm-1.06-8.132v-.001a5 5 0 1 0-7.072 7.072L8 14.07l3.536-3.534a5 5 0 0 0 0-7.072ZM8 9a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 9Z"></path></svg>
+        France
+      </div>
+      <div class="gh-meta-row">
+        <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M7.775 3.275a.75.75 0 0 0 1.06 1.06l1.25-1.25a2 2 0 1 1 2.83 2.83l-2.5 2.5a2 2 0 0 1-2.83 0 .75.75 0 0 0-1.06 1.06 3.5 3.5 0 0 0 4.95 0l2.5-2.5a3.5 3.5 0 0 0-4.95-4.95l-1.25 1.25Zm-4.69 9.64a2 2 0 0 1 0-2.83l2.5-2.5a2 2 0 0 1 2.83 0 .75.75 0 0 0 1.06-1.06 3.5 3.5 0 0 0-4.95 0l-2.5 2.5a3.5 3.5 0 0 0 4.95 4.95l1.25-1.25a.75.75 0 0 0-1.06-1.06l-1.25 1.25a2 2 0 0 1-2.83 0Z"></path></svg>
+        redious.fr
+      </div>
+    </aside>
+
+    <main>
+      <div class="gh-readme">
+        <div class="gh-readme-head">
+          <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M0 1.75A.75.75 0 0 1 .75 1h4.253c1.227 0 2.317.59 3 1.501A3.743 3.743 0 0 1 11.006 1h4.245a.75.75 0 0 1 .75.75v10.5a.75.75 0 0 1-.75.75h-4.507a2.25 2.25 0 0 0-1.591.659l-.622.621a.75.75 0 0 1-1.06 0l-.622-.621A2.25 2.25 0 0 0 5.258 13H.75a.75.75 0 0 1-.75-.75Zm7.251 10.324.004-5.073-.002-2.253A2.25 2.25 0 0 0 5.003 2.5H1.5v9h3.757a3.75 3.75 0 0 1 1.994.574ZM8.755 4.75l-.004 7.322a3.752 3.752 0 0 1 1.992-.572H14.5v-9h-3.495a2.25 2.25 0 0 0-2.25 2.25Z"></path></svg>
+          <span class="crumb">README.md</span>
+        </div>
+        <div class="gh-readme-body">
+          <div class="md">
+
+            <div class="banner-wrap" id="banner"></div>
+
+            <p class="tagline">Solo de bout en bout — de l'architecture à la production.</p>
+
+            <div class="badges" id="badges"></div>
+
+            <h2>Ce que je construis</h2>
+            <ul class="feat">
+              <li>
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 1h12.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0 1 14.25 15H1.75A1.75 1.75 0 0 1 0 13.25V2.75C0 1.784.784 1 1.75 1ZM1.5 2.75v10.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25V2.75a.25.25 0 0 0-.25-.25H1.75a.25.25 0 0 0-.25.25Zm5.45 1.32 2.36 2.36a.5.5 0 0 1 0 .708l-2.36 2.36a.5.5 0 0 1-.708-.708L8.182 6.78 6.242 4.84a.5.5 0 0 1 .708-.708Z"></path></svg></span>
+                <span class="t"><b>Apps desktop cross-platform</b> — Tauri 2 · React · Rust. <span>Local-first, zéro télémétrie.</span></span>
+              </li>
+              <li>
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM4.5 7.5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2ZM8 4a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm0 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"></path></svg></span>
+                <span class="t"><b>Orchestration agentique</b> — pipelines d'agents (Claude Code, Cursor) <span>pour coder, déployer et monitorer.</span></span>
+              </li>
+              <li>
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M2.5 5.724V8.18l.752.752a.75.75 0 0 1-1.06 1.06L.439 8.243a1.5 1.5 0 0 1 0-2.121L2.19 4.37V2.75A1.75 1.75 0 0 1 3.94 1h8.122c.966 0 1.75.784 1.75 1.75v1.62l1.75 1.752a1.5 1.5 0 0 1 0 2.121l-1.752 1.749a.75.75 0 1 1-1.06-1.06l.752-.752V5.724l-1.97-1.97a.25.25 0 0 0-.177-.073H3.94a.25.25 0 0 0-.25.25v1.72L2.5 5.724ZM3 11.5h10a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1Z"></path></svg></span>
+                <span class="t"><b>Infra self-hosted</b> — VPS Docker / Coolify, services sur <code>*.redious.fr</code>.</span>
+              </li>
+              <li>
+                <span class="ic"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M11.013 1.427a1.75 1.75 0 0 1 2.474 0l1.086 1.086a1.75 1.75 0 0 1 0 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 0 1-.927-.928l.929-3.25c.081-.286.235-.547.445-.758l8.61-8.61Zm.176 4.823L9.75 4.81l-6.286 6.287a.253.253 0 0 0-.064.108l-.558 1.953 1.953-.558a.253.253 0 0 0 .108-.064Zm1.238-3.763a.25.25 0 0 0-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 0 0 0-.354Z"></path></svg></span>
+                <span class="t"><b>Serveurs MCP sur mesure</b> — outils métier &amp; monitoring <span>branchés directement aux agents.</span></span>
+              </li>
+            </ul>
+
+            <h2>Projets</h2>
+            <div class="proj">
+              <div class="row"><a class="name" href="https://github.com/DevRedious/imagehub">imagehub</a><span class="desc">Traitement &amp; optimisation d'images 100 % local — upscale, AVIF, audit assets</span><span class="vis pub">public</span></div>
+              <div class="row"><a class="name" href="https://github.com/DevRedious/space-arcade">space-arcade</a><span class="desc">Site vitrine rétro-futuriste — salle de jeux à Chauny</span><span class="vis pub">public</span></div>
+              <div class="row"><span class="name">devdash</span><span class="desc">Cockpit desktop dev / freelance — projets, finance, IA, tooling local</span><span class="vis">privé</span></div>
+              <div class="row"><span class="name">kysho</span><span class="desc">Transcription vidéo / audio locale — Whisper GPU, OCR, yt-dlp</span><span class="vis">wip</span></div>
+              <div class="row"><span class="name">vone</span><span class="desc">Application 2FA mobile — Expo / React Native</span><span class="vis">privé</span></div>
+              <div class="row"><span class="name">vps</span><span class="desc">Serveur MCP de monitoring &amp; diagnostic infra Redious</span><span class="vis">privé</span></div>
+            </div>
+
+            <h2>Stack</h2>
+            <div class="stack">
+              <div class="grp"><div class="k">Desktop</div><div class="v">Tauri 2 <span class="dot">·</span> React <span class="dot">·</span> TypeScript <span class="dot">·</span> Rust <span class="dot">·</span> Vite <span class="dot">·</span> HeroUI <span class="dot">·</span> Tailwind <span class="dot">·</span> Biome</div></div>
+              <div class="grp"><div class="k">Data &amp; mobile</div><div class="v">SQLite / SQLCipher <span class="dot">·</span> Expo <span class="dot">·</span> HTML / CSS / JS vanilla</div></div>
+              <div class="grp"><div class="k">Infra</div><div class="v">Docker <span class="dot">·</span> Coolify <span class="dot">·</span> Tailscale <span class="dot">·</span> Infisical <span class="dot">·</span> n8n <span class="dot">·</span> Nextcloud</div></div>
+              <div class="grp"><div class="k">Agentique</div><div class="v">Claude Code <span class="dot">·</span> Cursor <span class="dot">·</span> Context7 <span class="dot">·</span> serveurs MCP maison</div></div>
+            </div>
+
+            <h2>Infra Redious</h2>
+            <div class="infra">
+              <div class="line"><span class="ic"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm6.5-3.25a.75.75 0 0 1 .75.75v2.19l1.53 1.53a.75.75 0 1 1-1.06 1.06l-1.75-1.75a.75.75 0 0 1-.22-.53V5.5a.75.75 0 0 1 .75-.75Z"></path></svg></span><a href="https://coolify.redious.fr">Coolify</a> <span class="host">coolify.redious.fr — déploiements</span></div>
+              <div class="line"><span class="ic"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm6.5-3.25a.75.75 0 0 1 .75.75v2.19l1.53 1.53a.75.75 0 1 1-1.06 1.06l-1.75-1.75a.75.75 0 0 1-.22-.53V5.5a.75.75 0 0 1 .75-.75Z"></path></svg></span><a href="https://n8n.redious.fr">n8n</a> <span class="host">n8n.redious.fr — automatisations</span></div>
+              <div class="line"><span class="ic"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm6.5-3.25a.75.75 0 0 1 .75.75v2.19l1.53 1.53a.75.75 0 1 1-1.06 1.06l-1.75-1.75a.75.75 0 0 1-.22-.53V5.5a.75.75 0 0 1 .75-.75Z"></path></svg></span><a href="https://nextcloud.redious.fr">Nextcloud</a> <span class="host">nextcloud.redious.fr — stockage &amp; sync</span></div>
+            </div>
+
+            <hr>
+            <div class="foot">
+              <div class="lead">Archi, dev, prod — une seule paire de mains.</div>
+              <a href="https://github.com/DevRedious?tab=repositories">Tous les dépôts →</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="tweaks-root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

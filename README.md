@@ -1,62 +1,54 @@
 <p align="center">
   <a href="https://github.com/DevRedious?tab=repositories">
-    <img src="./assets/github-profile.svg" alt="DevRedious — développeur & orchestrateur agentique" width="100%" />
+    <img src="./assets/github-banner.svg?v=2" alt="DevRedious â€” dÃ©veloppeur & orchestrateur agentique" width="100%">
   </a>
 </p>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Tauri-2-24C8DB?logo=tauri&logoColor=white" alt="Tauri 2">
-  <img src="https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white" alt="React 19">
-  <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript 5">
-  <img src="https://img.shields.io/badge/Rust-1.96-000000?logo=rust&logoColor=white" alt="Rust">
-  <img src="https://img.shields.io/badge/Node.js-24-339933?logo=nodedotjs&logoColor=white" alt="Node.js 24">
-  <img src="https://img.shields.io/badge/Linter-Biome-60A5FA?logo=biome&logoColor=white" alt="Biome">
-</p>
+<p align="center"><em>Solo de bout en bout â€” de l'architecture Ã  la production.</em></p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Docker-Podman-2496ED?logo=docker&logoColor=white" alt="Docker / Podman">
-  <img src="https://img.shields.io/badge/Coolify-self--hosted-6B4FBB" alt="Coolify">
-  <img src="https://img.shields.io/badge/Tailscale-mesh-242424?logo=tailscale&logoColor=white" alt="Tailscale">
-  <img src="https://img.shields.io/badge/MCP-custom_servers-7C3AED" alt="MCP">
-  <img src="https://img.shields.io/badge/OS-Nobara%20Linux%2043-294172?logo=fedora&logoColor=white" alt="Nobara Linux 43">
+  <img src="https://img.shields.io/badge/Tauri_2-161b22?style=flat-square&logo=tauri&logoColor=DDD6C9&labelColor=0d1117" alt="Tauri 2">
+  <img src="https://img.shields.io/badge/React_19-161b22?style=flat-square&logo=react&logoColor=DDD6C9&labelColor=0d1117" alt="React 19">
+  <img src="https://img.shields.io/badge/TypeScript_5-161b22?style=flat-square&logo=typescript&logoColor=DDD6C9&labelColor=0d1117" alt="TypeScript 5">
+  <img src="https://img.shields.io/badge/Rust-161b22?style=flat-square&logo=rust&logoColor=DDD6C9&labelColor=0d1117" alt="Rust">
+  <img src="https://img.shields.io/badge/Node.js_24-161b22?style=flat-square&logo=nodedotjs&logoColor=DDD6C9&labelColor=0d1117" alt="Node.js 24">
+  <img src="https://img.shields.io/badge/Biome-161b22?style=flat-square&logo=biome&logoColor=DDD6C9&labelColor=0d1117" alt="Biome">
 </p>
 
-## Ce que je fais
+## Ce que je construis
 
-- **Applications desktop cross-platform** (Tauri 2, React, Rust) — local-first, sans télémétrie
-- **Orchestration agentique** — agents IA (Claude Code, Cursor) pour code, déploiement et monitoring
-- **Self-hosting & infra** — VPS Docker/Coolify, services sur `*.redious.fr`
-- **Serveurs MCP sur mesure** — monitoring VPS, outils métier, intégrations agentiques
+- **Apps desktop cross-platform** â€” Tauri 2 Â· React Â· Rust. Local-first, zÃ©ro tÃ©lÃ©mÃ©trie.
+- **Orchestration agentique** â€” pipelines d'agents (Claude Code, Cursor) pour coder, dÃ©ployer et monitorer.
+- **Infra self-hosted** â€” VPS Docker / Coolify, services sur `*.redious.fr`.
+- **Serveurs MCP sur mesure** â€” outils mÃ©tier & monitoring branchÃ©s directement aux agents.
 
-## Projets phares
+## Projets
 
-| Projet | Description | Visibilité |
-|--------|-------------|------------|
-| [**devdash**](https://github.com/DevRedious/devdash) | Cockpit desktop dev/freelance (projets, finance, IA, tooling local) | privé |
-| [**imagehub**](https://github.com/DevRedious/imagehub) | Traitement & optimisation d'images 100 % local (upscale, AVIF, audit assets) | public |
-| **kysho** | Transcription vidéo/audio locale (Whisper GPU, OCR, yt-dlp) — local, pas encore publié | — |
-| [**vone**](https://github.com/DevRedious/vone) | Application 2FA mobile (Expo / React Native) | privé |
-| [**space-arcade**](https://github.com/DevRedious/space-arcade) | Site vitrine rétro-futuriste — salle de jeux à Chauny | public |
-| [**vps**](https://github.com/DevRedious/vps) | Serveur MCP de monitoring & diagnostic infra Redious | privé |
+| Projet | Description | |
+|--------|-------------|---|
+| [**imagehub**](https://github.com/DevRedious/imagehub) | Traitement & optimisation d'images 100 % local â€” upscale, AVIF, audit assets | `public` |
+| [**space-arcade**](https://github.com/DevRedious/space-arcade) | Site vitrine rÃ©tro-futuriste â€” salle de jeux Ã  Chauny | `public` |
+| **devdash** | Cockpit desktop dev / freelance â€” projets, finance, IA, tooling local | `privÃ©` |
+| **kysho** | Transcription vidÃ©o / audio locale â€” Whisper GPU, OCR, yt-dlp | `wip` |
+| [**vone**](https://github.com/DevRedious/vone) | Application 2FA mobile â€” Expo / React Native | `privÃ©` |
+| [**vps**](https://github.com/DevRedious/vps) | Serveur MCP de monitoring & diagnostic infra Redious | `privÃ©` |
 
-## Stack technique
+## Stack
 
-Tauri 2 • React • TypeScript • Rust • Vite • HeroUI • Tailwind CSS • Biome
-SQLite / SQLCipher • Expo • HTML/CSS/JS vanilla
-Docker • Coolify • Tailscale • Infisical • n8n • Nextcloud
-Claude Code • Cursor • Context7 • serveurs MCP personnalisés
+**Desktop**  Â·  Tauri 2 Â· React Â· TypeScript Â· Rust Â· Vite Â· HeroUI Â· Tailwind Â· Biome
+**Data & mobile**  Â·  SQLite / SQLCipher Â· Expo Â· HTML / CSS / JS vanilla
+**Infra**  Â·  Docker Â· Coolify Â· Tailscale Â· Infisical Â· n8n Â· Nextcloud
+**Agentique**  Â·  Claude Code Â· Cursor Â· Context7 Â· serveurs MCP maison
 
 ## Infra Redious
 
-Services auto-hébergés sur mon VPS :
-
-- [Coolify](https://coolify.redious.fr) — déploiements
-- [n8n](https://n8n.redious.fr) — automatisations
-- [Nextcloud](https://nextcloud.redious.fr) — stockage & sync
+- [**Coolify**](https://coolify.redious.fr) â€” dÃ©ploiements Â· `coolify.redious.fr`
+- [**n8n**](https://n8n.redious.fr) â€” automatisations Â· `n8n.redious.fr`
+- [**Nextcloud**](https://nextcloud.redious.fr) â€” stockage & sync Â· `nextcloud.redious.fr`
 
 ---
 
 <p align="center">
-  <i>Solo de bout en bout — archi, dev, prod.</i><br>
-  <a href="https://github.com/DevRedious?tab=repositories">Tous les dépôts</a>
+  <em>Archi, dev, prod â€” une seule paire de mains.</em><br>
+  <a href="https://github.com/DevRedious?tab=repositories">Tous les dÃ©pÃ´ts â†’</a>
 </p>
