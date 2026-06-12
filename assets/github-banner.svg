@@ -29,13 +29,13 @@
   </circle>
   <text x="58" y="190" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="84" font-weight="600" letter-spacing="-0.035em" fill="#F4F3F0">DevRedious</text>
   <rect x="60" y="214" width="62" height="3" rx="1.5" fill="#C2A878"/>
-  <text x="134" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="21" fill="#9A9A9F">développeur &amp; orchestrateur agentique</text>
+  <text x="134" y="225" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif" font-size="21" fill="#9A9A9F">développeur</text>
   <g font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" letter-spacing="0.14em" fill="#6E6E73" text-anchor="end">
     <text x="1144" y="150">TAURI · RUST · REACT</text>
-    <text x="1144" y="176">SELF-HOSTED INFRA</text>
-    <text x="1144" y="202">MCP · LOCAL-FIRST</text>
+    <text x="1144" y="176">TYPESCRIPT · VITE</text>
+    <text x="1144" y="202">DESKTOP · WEB</text>
   </g>
-  <text x="58" y="284" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" letter-spacing="0.1em" fill="#6E6E73">solo · de l'archi à la prod</text>
+  <text x="58" y="284" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="12.5" letter-spacing="0.1em" fill="#6E6E73">apps · sites · outils</text>
   <rect x="56" y="300" width="1088" height="1" fill="url(#hair)"/>
   <g clip-path="url(#clipEd)">
     <rect x="-260" y="299" width="260" height="2" fill="url(#shine)" opacity="0">

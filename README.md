@@ -1,10 +1,8 @@
 <p align="center">
   <a href="https://github.com/DevRedious?tab=repositories">
-    <img src="./assets/github-banner.svg?v=2" alt="DevRedious — développeur & orchestrateur agentique" width="100%">
+    <img src="./assets/github-banner.svg?v=3" alt="DevRedious — développeur" width="100%">
   </a>
 </p>
-
-<p align="center"><em>Solo de bout en bout — de l'architecture à la production.</em></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Tauri_2-161b22?style=flat-square&logo=tauri&logoColor=DDD6C9&labelColor=0d1117" alt="Tauri 2">
@@ -15,40 +13,26 @@
   <img src="https://img.shields.io/badge/Biome-161b22?style=flat-square&logo=biome&logoColor=DDD6C9&labelColor=0d1117" alt="Biome">
 </p>
 
-## Ce que je construis
+## Ce que je fais
 
-- **Apps desktop cross-platform** — Tauri 2 · React · Rust. Local-first, zéro télémétrie.
-- **Orchestration agentique** — pipelines d'agents (Claude Code, Cursor) pour coder, déployer et monitorer.
-- **Infra self-hosted** — VPS Docker / Coolify, services sur `*.redious.fr`.
-- **Serveurs MCP sur mesure** — outils métier & monitoring branchés directement aux agents.
+- **Applications desktop** — Tauri 2, React, Rust
+- **Sites & interfaces web** — React, TypeScript, HTML/CSS/JS
+- **Outils & scripts** — automatisation, CLI, intégrations
 
-## Projets
+## Projets publics
 
-| Projet | Description | |
-|--------|-------------|---|
-| [**imagehub**](https://github.com/DevRedious/imagehub) | Traitement & optimisation d'images 100 % local — upscale, AVIF, audit assets | `public` |
-| [**space-arcade**](https://github.com/DevRedious/space-arcade) | Site vitrine rétro-futuriste — salle de jeux à Chauny | `public` |
-| **devdash** | Cockpit desktop dev / freelance — projets, finance, IA, tooling local | `privé` |
-| **kysho** | Transcription vidéo / audio locale — Whisper GPU, OCR, yt-dlp | `wip` |
-| [**vone**](https://github.com/DevRedious/vone) | Application 2FA mobile — Expo / React Native | `privé` |
-| [**vps**](https://github.com/DevRedious/vps) | Serveur MCP de monitoring & diagnostic infra Redious | `privé` |
+| Projet | Description |
+|--------|-------------|
+| [**imagehub**](https://github.com/DevRedious/imagehub) | Traitement & optimisation d'images en local |
+| [**space-arcade**](https://github.com/DevRedious/space-arcade) | Site vitrine rétro-futuriste (HTML/CSS/JS) |
+| [**kois-story**](https://github.com/DevRedious/kois-story) | Projet interactif |
 
 ## Stack
 
-**Desktop**  ·  Tauri 2 · React · TypeScript · Rust · Vite · HeroUI · Tailwind · Biome
-**Data & mobile**  ·  SQLite / SQLCipher · Expo · HTML / CSS / JS vanilla
-**Infra**  ·  Docker · Coolify · Tailscale · Infisical · n8n · Nextcloud
-**Agentique**  ·  Claude Code · Cursor · Context7 · serveurs MCP maison
-
-## Infra Redious
-
-- [**Coolify**](https://coolify.redious.fr) — déploiements · `coolify.redious.fr`
-- [**n8n**](https://n8n.redious.fr) — automatisations · `n8n.redious.fr`
-- [**Nextcloud**](https://nextcloud.redious.fr) — stockage & sync · `nextcloud.redious.fr`
+Tauri 2 · React · TypeScript · Rust · Vite · Tailwind · Biome · Expo · Docker
 
 ---
 
 <p align="center">
-  <em>Archi, dev, prod — une seule paire de mains.</em><br>
   <a href="https://github.com/DevRedious?tab=repositories">Tous les dépôts →</a>
 </p>
