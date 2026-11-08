@@ -1,37 +1,16 @@
 <p align="center">
   <a href="https://github.com/DevRedious?tab=repositories">
-    <img src="./assets/github-banner.svg?v=3" alt="DevRedious — développeur" width="100%">
+    <img src="./assets/profile-hero.svg" alt="DevRedious, développeur : apps desktop, bots Discord, plateformes web, outils et scripts" width="100%">
   </a>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Tauri_2-161b22?style=flat-square&logo=tauri&logoColor=DDD6C9&labelColor=0d1117" alt="Tauri 2">
-  <img src="https://img.shields.io/badge/React_19-161b22?style=flat-square&logo=react&logoColor=DDD6C9&labelColor=0d1117" alt="React 19">
-  <img src="https://img.shields.io/badge/TypeScript_5-161b22?style=flat-square&logo=typescript&logoColor=DDD6C9&labelColor=0d1117" alt="TypeScript 5">
-  <img src="https://img.shields.io/badge/Rust-161b22?style=flat-square&logo=rust&logoColor=DDD6C9&labelColor=0d1117" alt="Rust">
-  <img src="https://img.shields.io/badge/Node.js_24-161b22?style=flat-square&logo=nodedotjs&logoColor=DDD6C9&labelColor=0d1117" alt="Node.js 24">
-  <img src="https://img.shields.io/badge/Biome-161b22?style=flat-square&logo=biome&logoColor=DDD6C9&labelColor=0d1117" alt="Biome">
+  <img src="./assets/profile-projects.svg" alt="Projets (dépôts privés). Wilobot : bot Discord et plateforme web. ARK Management : gestion de serveurs ARK avec API, agent, plugin et interface web. Rilindra : écosystème communautaire ARK avec bot, application, staff et MCP. Primal Ascension : bot Discord, console staff et état du cluster en direct. Poddock : cockpit desktop pour Podman." width="100%">
 </p>
 
-## Ce que je fais
-
-- **Applications desktop** — Tauri 2, React, Rust
-- **Sites & interfaces web** — React, TypeScript, HTML/CSS/JS
-- **Outils & scripts** — automatisation, CLI, intégrations
-
-## Projets publics
-
-| Projet | Description |
-|--------|-------------|
-| [**imagehub**](https://github.com/DevRedious/imagehub) | Traitement & optimisation d'images en local |
-| [**space-arcade**](https://github.com/DevRedious/space-arcade) | Site vitrine rétro-futuriste (HTML/CSS/JS) |
-| [**kois-story**](https://github.com/DevRedious/kois-story) | Projet interactif |
-
-## Stack
-
-Tauri 2 · React · TypeScript · Rust · Vite · Tailwind · Biome · Expo · Docker
-
----
+<p align="center">
+  <img src="./assets/profile-stack.svg" alt="Stack : Tauri, Rust, React, TypeScript, Next.js, Node.js, Biome, Discord, Linux, Claude" width="100%">
+</p>
 
 <p align="center">
   <a href="https://github.com/DevRedious?tab=repositories">Tous les dépôts →</a>

@@ -1,0 +1,26 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.35" y2="1">
+      <stop offset="0" stop-color="#a780ff"/>
+      <stop offset="0.55" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#6d40d4"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.16"/>
+      <stop offset="0.5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1024" height="1024" rx="232" fill="url(#bg)"/>
+  <rect width="1024" height="1024" rx="232" fill="url(#sheen)"/>
+
+  <!-- Glyphe : couches empilées (stack / conteneurs) -->
+  <g fill="none" stroke="#ffffff" stroke-width="48" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Diamant supérieur, légèrement rempli pour la profondeur -->
+    <path d="M512 232 L788 372 L512 512 L236 372 Z" fill="#ffffff" fill-opacity="0.16"/>
+    <!-- Couche du milieu -->
+    <path d="M236 470 L512 610 L788 470"/>
+    <!-- Couche inférieure -->
+    <path d="M236 566 L512 706 L788 566"/>
+  </g>
+</svg>
